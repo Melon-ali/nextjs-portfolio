@@ -1,5 +1,6 @@
 import { EnvelopeIcon } from '@heroicons/react/16/solid'
-import { GithubIcon, LinkedInIcon } from './social-icons'
+import { GithubIcon, LinkedInIcon } from '../home/social-icons'
+import Link from 'next/link'
 
 export default function Footer() {
   return (
@@ -20,13 +21,13 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white mb-4">Links</h3>
             <ul className="space-y-2">
               <li>
-                <a
+                <Link
                   href="#projects"
                   className="text-gray-400
                          hover:text-white transition-colors"
                 >
                   Projects
-                </a>
+                </Link>
               </li>
               <li>
                 <a
@@ -76,14 +77,18 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Connect</h3>
             <ul className="flex space-x-4">
-              <GithubIcon
-                className="text-gray-400 h-6 w-6
+              <Link href={'https://github.com/Melon-ali'}>
+                <GithubIcon
+                  className="text-gray-400 h-6 w-6
                         hover:text-white transition-colors"
-              />
-              <LinkedInIcon
-                className="text-gray-400 h-6 w-6
+                />
+              </Link>
+              <Link href={'https://www.linkedin.com/in/melon-ali'}>
+                <LinkedInIcon
+                  className="text-gray-400 h-6 w-6
                         hover:text-white transition-colors"
-              />
+                />
+              </Link>
               <EnvelopeIcon
                 className="text-gray-400 h-6 w-6
                         hover:text-white transition-colors"

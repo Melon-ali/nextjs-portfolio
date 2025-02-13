@@ -1,15 +1,16 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import MenuItem from './menuItem'
-import { FacebookIcon, GithubIcon, LinkedInIcon } from './social-icons'
+import MenuItem from '../home/menuItem'
+import { FacebookIcon, GithubIcon, LinkedInIcon } from '../home/social-icons'
 import { useState } from 'react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid'
+import Link from 'next/link'
 
 const navItems = [
   { name: 'Projects', href: '#work' },
   { name: 'Skills', href: '#skills' },
-  { name: 'Blogs', href: '#blogs' },
+  { name: 'blogs', href: '/blogs' },
   { name: 'Contact', href: '#contact' },
   { name: 'Dashboard', href: '#dashboard' },
 ]
@@ -30,24 +31,26 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-2 group"
-          >
-            <div className="relative h-8 w-8 rounded-full overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary to-tertiary animate-spin-slow [mask-image:linear-gradient(transparent,white)]" />
-              <div className="absolute inset-[2px] bg-background rounded-full flex items-center justify-center">
-                {' '}
-                <span className="font-bold bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent">
-                  MA
-                </span>
+          <Link href={'/'}>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center gap-2 group"
+            >
+              <div className="relative h-8 w-8 rounded-full overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-tertiary animate-spin-slow [mask-image:linear-gradient(transparent,white)]" />
+                <div className="absolute inset-[2px] bg-background rounded-full flex items-center justify-center">
+                  {' '}
+                  <span className="font-bold bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent">
+                    MA
+                  </span>
+                </div>
               </div>
-            </div>
 
-            <span className="font-semibold text-content/90 group-hover:text-primary transition-colors">
-              Melon Ali
-            </span>
-          </motion.div>
+              <span className="font-semibold text-content/90 group-hover:text-primary transition-colors">
+                Melon Ali
+              </span>
+            </motion.div>
+          </Link>
           <div className="hidden md:flex items-center gap-6">
             <div className="flex items-center gap-6 bg-background/80 px-4 py-2 rounded-full border border-white/5 shadow-lg">
               {navItems.map((items, i) => (
@@ -76,7 +79,9 @@ export default function Navbar() {
               >
                 <FacebookIcon className="h-5 w-5 text-content/80 group-hover:text-primary transition-colors" />
               </a>
-              <button className="w-5 text-content/80 group-hover:text-primary transition-colors">login</button>
+              <button className="w-5 text-content/80 group-hover:text-primary transition-colors">
+                login
+              </button>
             </div>
           </div>
           <button
@@ -125,9 +130,10 @@ export default function Navbar() {
               >
                 <FacebookIcon className="h-5 w-5 text-content/80 group-hover:text-primary transition-colors" />
               </a>
-              <button className="w-5 text-content/80 group-hover:text-primary transition-colors">login</button>
+              <button className="w-5 text-content/80 group-hover:text-primary transition-colors">
+                login
+              </button>
             </div>
-            
           </motion.div>
         )}
       </div>

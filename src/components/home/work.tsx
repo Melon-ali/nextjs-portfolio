@@ -47,7 +47,7 @@ const projects = [
 
 const Work = () => {
   return (
-    <section className=" py-32 relative id='work'">
+    <section className="py-32 relative id='work'">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Heading */}
 

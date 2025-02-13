@@ -1,13 +1,12 @@
 'use client'
 
-
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
-import { ParticleCanvas } from '../hooks/particle';
+import { ParticleCanvas } from '../../hooks/particle'
 
 const Hero = () => {
-    const {scrollY} = useScroll();
-    const y = useTransform(scrollY, [0, 500], [0, 100])
+  const { scrollY } = useScroll()
+  const y = useTransform(scrollY, [0, 500], [0, 100])
   return (
     <section className="min-h-screen relative overflow-hidden bg-black">
       <ParticleCanvas />
@@ -77,47 +76,62 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
             className="lg:w-1/2 relative"
-            style={{y}}
+            style={{ y }}
           >
-            <div className='relative w-full aspect-square group'>
-                {/* Animated Border */}
-                <motion.div initial={{scale: 0.95}} animate = {{scale: 1}} transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    repeatType: 'mirror'
-                }} className='absoulte inset-0 rounded-3xl bg-gradient-to-r from-primary/30 via-secondary/30 to-tertiary/30 opacity-50' />
-            {/* Floating Animation */}
-            <motion.div
-              animate={{ y: [0, -20, 0] }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-              className="relative w-full aspect-square rounded-3xl overflow-hidden border border-white/10 bg-surface backdrop-blur-sm"
-            >
-              <Image
-                src="/avater.png"
-                alt="Avatar"
-                fill
-                className="object-cover scale-110 group-hover:scale-100 transition-transform duration-500"
+            <div className="relative w-full aspect-square group">
+              {/* Animated Border */}
+              <motion.div
+                initial={{ scale: 0.95 }}
+                animate={{ scale: 1 }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatType: 'mirror',
+                }}
+                className="absoulte inset-0 rounded-3xl bg-gradient-to-r from-primary/30 via-secondary/30 to-tertiary/30 opacity-50"
               />
-              <div className='absolute inset-0 bg-gradient-to-t from-blackk/60 to-transparent' />
-              <motion.div initial={{opacity: 0}} animate = {{opacity: 1}} transition={{
-                delay: 0.6
-              }} className='absolute bottom-8 left-8'>
-                <div className='text-2xl font-bold text-content'>
+              {/* Floating Animation */}
+              <motion.div
+                animate={{ y: [0, -20, 0] }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
+                className="relative w-full aspect-square rounded-3xl overflow-hidden border border-white/10 bg-surface backdrop-blur-sm"
+              >
+                <Image
+                  src="/avater.png"
+                  alt="Avatar"
+                  fill
+                  className="object-cover scale-110 group-hover:scale-100 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blackk/60 to-transparent" />
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{
+                    delay: 0.6,
+                  }}
+                  className="absolute bottom-8 left-8"
+                >
+                  <div className="text-2xl font-bold text-content">
                     Based in <br />
-                    <motion.span className='black bg-gradient-to-r from-primary bg-clip-text text-transparent' animate={{backgroundPosition: ['0% 50%', '100% 50%']}} transition={{
-                        duration:3,
+                    <motion.span
+                      className="black bg-gradient-to-r from-primary bg-clip-text text-transparent"
+                      animate={{ backgroundPosition: ['0% 50%', '100% 50%'] }}
+                      transition={{
+                        duration: 3,
                         repeat: Infinity,
-                        repeatType: 'mirror'
-                    }} style={{backgroundSize: "200% 200%"}}>
-                        Rajshahi, Bangladesh
+                        repeatType: 'mirror',
+                      }}
+                      style={{ backgroundSize: '200% 200%' }}
+                    >
+                      Rajshahi, Bangladesh
                     </motion.span>
-                </div>
+                  </div>
+                </motion.div>
               </motion.div>
-            </motion.div>
             </div>
           </motion.div>
         </div>
