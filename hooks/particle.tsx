@@ -1,6 +1,7 @@
 'use client';
-import { useCanvas } from '@/hooks/useCanvas';
+
 import { useCallback, useRef } from 'react';
+import { useCanvas } from './useCanvas';
 
 class Particle {
   x: number;

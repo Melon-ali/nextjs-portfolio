@@ -1,13 +1,16 @@
 'use client'
 
+
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
+import { ParticleCanvas } from '../hooks/particle';
 
 const Hero = () => {
     const {scrollY} = useScroll();
     const y = useTransform(scrollY, [0, 500], [0, 100])
   return (
     <section className="min-h-screen relative overflow-hidden bg-black">
+      <ParticleCanvas />
       <div className="max-w-7xl mx-auto px-6 pt-32">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           <motion.div
@@ -94,7 +97,7 @@ const Hero = () => {
               className="relative w-full aspect-square rounded-3xl overflow-hidden border border-white/10 bg-surface backdrop-blur-sm"
             >
               <Image
-                src="/avatar.jpg"
+                src="/avater.png"
                 alt="Avatar"
                 fill
                 className="object-cover scale-110 group-hover:scale-100 transition-transform duration-500"
