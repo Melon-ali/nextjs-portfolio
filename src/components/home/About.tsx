@@ -82,11 +82,11 @@ const aboutData: AboutSection[] = [
     info: [
       {
         title: 'Reactive Accelerator Course - Web Developer',
-        stage: 'Learn with Sumit - LWS',
+        stage: 'Learn with Sumit - LWS, Batch-1',
       },
       {
         title: 'Complete We Development - Web Developer',
-        stage: 'Programing Hero - PHR',
+        stage: 'Programing Hero - Level-1, Batch-4',
       },
     ],
   },

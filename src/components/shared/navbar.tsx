@@ -3,17 +3,26 @@
 import { motion } from 'framer-motion'
 import MenuItem from '../home/menuItem'
 import { FacebookIcon, GithubIcon, LinkedInIcon } from '../home/social-icons'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid'
 import Link from 'next/link'
+import { signOut } from 'next-auth/react'
 
 const navItems = [
-  { name: 'Projects', href: '#work' },
-  { name: 'Skills', href: '#skills' },
+  { name: 'Home', href: '/' },
+  { name: 'Projects', href: '/projects' },
   { name: 'blogs', href: '/blogs' },
-  { name: 'Contact', href: '#contact' },
-  { name: 'Dashboard', href: '#dashboard' },
+  { name: 'Contact', href: '/contact' },
+  { name: 'Dashboard', href: '/dashboard' },
 ]
+
+type UserProps = {
+  user?: {
+    name?: string | null | undefined
+    email?: string | null | undefined
+    image?: string | null | undefined
+  }
+}
 
 const socialLinks = {
   github: 'https://github.com/Melon-ali',
@@ -21,8 +30,17 @@ const socialLinks = {
   facebook: 'https://www.facebook.com/md.melon.581',
 }
 
-export default function Navbar() {
+export default function Navbar({ session }: { session: UserProps | null }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -61,27 +79,39 @@ export default function Navbar() {
             </div>
             <div className="h-6 w-px bg-white/10 mx-2"></div>
             <div className="flex gap-4">
-              <a
+              <Link target='_black'
                 href={socialLinks.github}
                 className="p-2 rounded-lg bg-white/5 hover:bg-primary/10 transition-colors group"
               >
                 <GithubIcon className="h-5 w-5 text-content/80 group-hover:text-primary transition-colors" />
-              </a>
-              <a
+              </Link>
+              <Link target='_black'
                 href={socialLinks.linkeding}
                 className="p-2 rounded-lg bg-white/5 hover:bg-primary/10 transition-colors group"
               >
                 <LinkedInIcon className="h-5 w-5 text-content/80 group-hover:text-primary transition-colors" />
-              </a>
-              <a
+              </Link>
+              <Link target='_black'
                 href={socialLinks.facebook}
                 className="p-2 rounded-lg bg-white/5 hover:bg-primary/10 transition-colors group"
               >
                 <FacebookIcon className="h-5 w-5 text-content/80 group-hover:text-primary transition-colors" />
-              </a>
-              <button className="w-5 text-content/80 group-hover:text-primary transition-colors">
-                login
-              </button>
+              </Link>
+              
+              {session?.user ? (
+                <button
+                  onClick={() => signOut()}
+                  className="w-5 text-content/80 group-hover:text-primary transition-colors"
+                >
+                  Logout
+                </button>
+              ) : (
+                <Link href="/login">
+                  <button className="w-5 text-content/80 group-hover:text-primary transition-colors">
+                    login
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
           <button
@@ -102,37 +132,48 @@ export default function Navbar() {
             className="md:hidden mt-4 pb-4 space-y-4"
           >
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
                 className="block px-4 py-2 text-content/80 hover:text-primary hover:bg-white/5 rounded-lg transition-colors"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
             <div className="pt-4 border-t border-white/5 flex gap-4">
-              <a
+              <Link
                 href={socialLinks.github}
                 className="p-2 rounded-lg bg-white/5 hover:bg-primary/10 transition-colors group"
               >
                 <GithubIcon className="h-5 w-5 text-content/80 group-hover:text-primary transition-colors" />
-              </a>
-              <a
+              </Link>
+              <Link
                 href={socialLinks.linkeding}
                 className="p-2 rounded-lg bg-white/5 hover:bg-primary/10 transition-colors group"
               >
                 <LinkedInIcon className="h-5 w-5 text-content/80 group-hover:text-primary transition-colors" />
-              </a>
-              <a
+              </Link>
+              <Link
                 href={socialLinks.facebook}
                 className="p-2 rounded-lg bg-white/5 hover:bg-primary/10 transition-colors group"
               >
                 <FacebookIcon className="h-5 w-5 text-content/80 group-hover:text-primary transition-colors" />
-              </a>
-              <button className="w-5 text-content/80 group-hover:text-primary transition-colors">
-                login
-              </button>
+              </Link>
+              {session?.user ? (
+                <button
+                  onClick={() => signOut()}
+                  className="w-5 text-content/80 group-hover:text-primary transition-colors"
+                >
+                  Logout
+                </button>
+              ) : (
+                <Link href="/login">
+                  <button className="w-5 text-content/80 group-hover:text-primary transition-colors">
+                    login
+                  </button>
+                </Link>
+              )}
             </div>
           </motion.div>
         )}

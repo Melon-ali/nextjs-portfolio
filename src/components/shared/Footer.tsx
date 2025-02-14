@@ -77,13 +77,13 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Connect</h3>
             <ul className="flex space-x-4">
-              <Link href={'https://github.com/Melon-ali'}>
+              <Link target='_black' href={'https://github.com/Melon-ali'}>
                 <GithubIcon
                   className="text-gray-400 h-6 w-6
                         hover:text-white transition-colors"
                 />
               </Link>
-              <Link href={'https://www.linkedin.com/in/melon-ali'}>
+              <Link target='_black' href={'https://www.linkedin.com/in/melon-ali'}>
                 <LinkedInIcon
                   className="text-gray-400 h-6 w-6
                         hover:text-white transition-colors"
