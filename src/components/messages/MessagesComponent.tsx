@@ -1,32 +1,28 @@
 'use client'
-// import { ContentLayout } from '@/components/admin/contentLayout'
-// import { TMessage } from '@/types/types'
+
 import { useEffect, useState } from 'react'
-// import {
-//   Table,
-//   TableBody,
-//   TableCell,
-//   TableHead,
-//   TableHeader,
-//   TableRow,
-// } from '@/components/ui/table'
 import { Trash2, Eye } from 'lucide-react'
 import { toast } from 'sonner'
 import { TMessage } from '@/src/types/types'
 import { ContentLayout } from '../admin/contentLayout'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/table'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '../ui/table'
 import { Button } from '../ui/button'
 import ConfirmationBox from '../ConfirmationBox'
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '../ui/dialog'
-// import ConfirmationBox from '@/components/ConfirmationBox'
-// import {
-//   Dialog,
-//   DialogContent,
-//   DialogDescription,
-//   DialogHeader,
-//   DialogTitle,
-// } from '@/components/ui/dialog'
-// import { Button } from '@/components/ui/button'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '../ui/dialog'
+
 type TExtendedMessage = TMessage & {
   _id: string
 }
@@ -93,7 +89,7 @@ export default function MessageComponent() {
                         size="sm"
                         onClick={() => handleViewMessage(message)}
                       >
-                        <Eye className="h-4 w-4" />
+                        <Eye className="h-4 w-4 text-white" />
                       </Button>
                       <ConfirmationBox
                         trigger={

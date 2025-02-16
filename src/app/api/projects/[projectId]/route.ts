@@ -3,11 +3,8 @@
 
 import dbConnect from "@/src/lib/database";
 import { ProjectModel } from "@/src/schemas/project.schema";
-// import dbConnect from "@/lib/database";
-// import { ProjectModel } from "@/schemas/project.schema";
 import { NextRequest, NextResponse } from "next/server";
 
-// GET a single project by ID
 export async function GET(req: NextRequest, context: any) {
   try {
     await dbConnect();
@@ -16,7 +13,7 @@ export async function GET(req: NextRequest, context: any) {
 
     if (!projectId) {
       return NextResponse.json({
-        message: "Project ID is required",
+        message: "Project ID is Required",
         status: 400,
       });
     }
@@ -24,18 +21,18 @@ export async function GET(req: NextRequest, context: any) {
     const project = await ProjectModel.findById(projectId);
 
     if (!project) {
-      return NextResponse.json({ message: "Project not found", status: 404 });
+      return NextResponse.json({ message: "Project Not Found", status: 404 });
     }
 
     return NextResponse.json({
       data: project,
-      message: "Project fetched successfully",
+      message: "Project Fetched Successfully",
       status: 200,
     });
   } catch (error) {
-    console.error("Error fetching project:", error);
+    console.error("Error Fetching Project:", error);
     return NextResponse.json({
-      message: "Failed to fetch project",
+      message: "Failed to Fetch Project",
       status: 500,
       error: error instanceof Error ? error.message : "Unknown error",
     });
@@ -58,17 +55,17 @@ export async function PATCH(request: NextRequest, context: any) {
     );
 
     if (!updatedProject) {
-      return NextResponse.json({ message: "Project not found", status: 404 });
+      return NextResponse.json({ message: "Project Not Found", status: 404 });
     }
 
     return NextResponse.json({
       data: updatedProject,
-      message: "Project updated successfully",
+      message: "Project Updated Successfully",
       status: 200,
     });
   } catch (error) {
     return NextResponse.json({
-      message: "Failed to update project",
+      message: "Failed to Update Project",
       status: 500,
       error,
     });
@@ -83,12 +80,12 @@ export async function DELETE(req: NextRequest, context: any) {
 
     await ProjectModel.findByIdAndDelete(projectId);
     return NextResponse.json({
-      message: "Project deleted successfully",
+      message: "Project Deleted Successfully",
       status: 200,
     });
   } catch (error) {
     return NextResponse.json({
-      message: "Failed to delete project",
+      message: "Failed to Delete Project",
       status: 500,
       error,
     });

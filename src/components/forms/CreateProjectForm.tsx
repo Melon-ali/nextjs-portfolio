@@ -226,7 +226,7 @@ export default function CreateProjectForm({ onSuccess }: CreateProjectFormProps)
 
         {/* Submit Button */}
         <div className="text-end">
-          <Button type="submit" effect="shine">
+          <Button type="submit">
             Submit
           </Button>
         </div>

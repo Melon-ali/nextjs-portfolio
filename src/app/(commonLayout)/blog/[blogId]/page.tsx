@@ -1,7 +1,3 @@
-// import { TExtendedBlog } from "@/app/(dashboardLayout)/dashboard/blogs/page";
-// import BlogDetailsCard from "@/components/blog-components/BlogDetailsCard";
-// import { baseUrl } from "@/utils/authOptions";
-
 import { TExtendedBlog } from '@/src/app/(dashboardLayout)/dashboard/blogs/page'
 import BlogDetailsCard from '@/src/components/blogs/BlogDetailsCard'
 import { baseUrl } from '@/src/utils/authOptions'
@@ -39,7 +35,7 @@ export default async function BlogDetails({
   const blog = await getBlog(resolvedParams.blogId)
 
   return (
-    <div className="min-h-screen container mx-auto py-16 px-4">
+    <div className="min-h-screen container mx-auto py-16 px-4 bg-gray-900">
       <BlogDetailsCard blog={blog} />
     </div>
   )

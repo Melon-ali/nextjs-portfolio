@@ -17,7 +17,7 @@ export default function ProjectCard({
   project: TProjectExtended;
 }) {
   return (
-    <Card className="group hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+    <Card className="group hover:shadow-lg transition-all duration-300 flex flex-col h-full text-white bg-surface">
       <CardHeader className="p-0">
         <div className="relative h-48 overflow-hidden">
           <Image
@@ -53,25 +53,25 @@ export default function ProjectCard({
       <CardFooter className="p-6 pt-0 flex flex-col gap-2">
         <div className="flex gap-2 w-full">
           <Link href={project?.liveLink} className="flex-1" target="_blank">
-            <Button variant="outline" className="w-full">
+            <Button className="w-full">
               Live Site
             </Button>
           </Link>
           <Link href={project?.clientRepo} className="flex-1" target="_blank">
-            <Button variant="outline" className="w-full">
+            <Button className="w-full">
               Client
             </Button>
           </Link>
           {project?.serverRepo && (
             <Link href={project?.serverRepo} className="flex-1" target="_blank">
-              <Button variant="outline" className="w-full">
+              <Button className="w-full">
                 Server
               </Button>
             </Link>
           )}
         </div>
         <Link href={`/projects/${project._id}`} className="w-full">
-          <Button effect={"shine"} className="w-full" variant="default">
+          <Button className="w-full" variant="default">
             View Details
           </Button>
         </Link>

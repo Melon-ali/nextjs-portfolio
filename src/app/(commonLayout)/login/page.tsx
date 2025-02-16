@@ -1,64 +1,60 @@
-"use client";
-import LoginForm from "@/src/components/forms/LoginForm";
-import RegisterForm from "@/src/components/forms/RegisterForm";
-import { Button } from "@/src/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/src/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/src/components/ui/tabs";
-import { baseUrl } from "@/src/utils/authOptions";
-import { signIn } from "next-auth/react";
-// import LoginForm from "@/components/forms/LoginForm";
-// import RegisterForm from "@/components/forms/RegisterForm";
-// import {
-//   Card,
-//   CardContent,
-//   CardDescription,
-//   CardFooter,
-//   CardHeader,
-//   CardTitle,
-// } from "@/components/ui/card";
-import { FaGoogle, FaGithub } from "react-icons/fa";
+'use client'
+import LoginForm from '@/src/components/forms/LoginForm'
+import RegisterForm from '@/src/components/forms/RegisterForm'
+import { Button } from '@/src/components/ui/button'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/src/components/ui/card'
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from '@/src/components/ui/tabs'
+import { baseUrl } from '@/src/utils/authOptions'
+import { signIn } from 'next-auth/react'
+import { FaGoogle, FaGithub } from 'react-icons/fa'
 
-// import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-// import { Button } from "@/components/ui/button";
-// import { signIn } from "next-auth/react";
-// import { baseUrl } from "@/utils/authOptions";
 export default function LoginPage() {
   return (
-    <div className="min-h-screen flex justify-center items-center">
+    <div className="min-h-screen flex justify-center bg-gray-900 items-center">
       <Tabs defaultValue="login" className="w-[400px]">
-        <TabsList className="grid w-full grid-cols-2">
+        <TabsList className="grid w-full grid-cols-2 text-white">
           <TabsTrigger value="login">Login</TabsTrigger>
           <TabsTrigger value="register">Register</TabsTrigger>
         </TabsList>
         <TabsContent value="login">
           <Card>
             <CardHeader>
-              <CardTitle className="text-center">Login</CardTitle>
+              <CardTitle className="text-center text-white">Login</CardTitle>
               <CardDescription></CardDescription>
             </CardHeader>
             <CardContent className="space-y-2">
               <LoginForm />
             </CardContent>
-            <p className="text-center">Or Sign In Using</p>
+            <p className="text-center text-white">Or Sign In Using</p>
             <div className="flex justify-center gap-4 mt-4">
               <Button
                 onClick={() =>
-                  signIn("google", {
+                  signIn('google', {
                     callbackUrl: `${baseUrl}/dashboard`,
                   })
                 }
-                effect={"shine"}
                 className="rounded-full"
               >
                 <FaGoogle />
               </Button>
               <Button
                 onClick={() =>
-                  signIn("github", {
+                  signIn('github', {
                     callbackUrl: `${baseUrl}/dashboard`,
                   })
                 }
-                effect={"shine"}
                 className="rounded-full"
               >
                 <FaGithub />
@@ -80,22 +76,20 @@ export default function LoginPage() {
             <div className="flex justify-center gap-4 mt-4">
               <Button
                 onClick={() =>
-                  signIn("google", {
+                  signIn('google', {
                     callbackUrl: `${baseUrl}/dashboard`,
                   })
                 }
-                effect={"shine"}
                 className="rounded-full"
               >
                 <FaGoogle />
               </Button>
               <Button
                 onClick={() =>
-                  signIn("github", {
+                  signIn('github', {
                     callbackUrl: `${baseUrl}/dashboard`,
                   })
                 }
-                effect={"shine"}
                 className="rounded-full"
               >
                 <FaGithub />
@@ -106,5 +100,5 @@ export default function LoginPage() {
         </TabsContent>
       </Tabs>
     </div>
-  );
+  )
 }

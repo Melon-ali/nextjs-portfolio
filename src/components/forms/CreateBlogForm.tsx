@@ -149,7 +149,7 @@ export default function CreateBlogForm({ onSuccess }: CreateProjectFormProps) {
           )}
         />
         <div className="text-end">
-        <Button effect={"shine"} type="submit">Submit</Button>
+        <Button type="submit">Submit</Button>
         </div>
       </form>
     </Form>

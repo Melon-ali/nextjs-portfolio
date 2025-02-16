@@ -1,8 +1,5 @@
 'use client'
 
-// import { Sidebar } from '@/components/admin/sidebar'
-// import { useSidebar } from '@/hooks/use-sidebar'
-// import { useStore } from '@/hooks/use-store'
 import { cn } from '@/lib/utils'
 import { useSidebar } from '@/src/hooks/use-sidebar'
 import { useStore } from '@/src/hooks/use-store'
@@ -21,7 +18,7 @@ export default function AdminPanelLayout({
       <Sidebar />
       <main
         className={cn(
-          'min-h-screen bg-zinc-50 dark:bg-zinc-900 transition-[margin-left] ease-in-out duration-300',
+          'min-h-screen bg-gray-900 text-white transition-[margin-left] ease-in-out duration-300',
           !settings.disabled && (!getOpenState() ? 'lg:ml-[90px]' : 'lg:ml-72'),
         )}
       >

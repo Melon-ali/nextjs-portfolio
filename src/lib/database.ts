@@ -6,11 +6,12 @@ const dbConnect = async () => {
   }
   try {
     await mongoose.connect(process.env.MONGODB_URI as string, {
-      dbName: "b4-a5-db",
+      dbName: "portfolio-auth",
     });
     return true;
   } catch (err) {
     console.log(err);
   }
 };
+
 export default dbConnect;

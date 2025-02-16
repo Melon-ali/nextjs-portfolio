@@ -147,7 +147,7 @@ export default function EditBlogForm({
           )}
         />
         <div className="text-end">
-          <Button effect={"shine"} type="submit">
+          <Button type="submit">
             Update
           </Button>
         </div>

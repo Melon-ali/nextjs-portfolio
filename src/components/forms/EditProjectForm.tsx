@@ -212,7 +212,7 @@ export default function EditProjectForm({ initialData, onSuccess }: EditProjectF
 
         {/* Submit Button */}
         <div className="text-end">
-          <Button type="submit" effect="shine">
+          <Button type="submit">
             Update Project
           </Button>
         </div>

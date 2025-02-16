@@ -2,8 +2,6 @@
 
 import dbConnect from "@/src/lib/database";
 import { MessageModel } from "@/src/schemas/message.schema";
-// import dbConnect from "@/lib/database";
-// import { MessageModel } from "@/schemas/message.schema";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET() {

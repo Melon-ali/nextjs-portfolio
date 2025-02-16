@@ -22,8 +22,8 @@ export type TLoginFormValues = {
 };
 
 const formSchema = z.object({
-  email: z.string().email("Invalid email address"),
-  password: z.string().min(1, "Password is required"),
+  email: z.string().email("Invalid Email Address"),
+  password: z.string().min(1, "Password is Required"),
 });
 
 export default function LoginForm() {
@@ -44,8 +44,8 @@ export default function LoginForm() {
         </pre>
       );
     } catch (error) {
-      console.error("Form submission error", error);
-      toast.error("Failed to submit the form. Please try again.");
+      console.error("Form Submission Error", error);
+      toast.error("Failed to Submit the form. Please try again.");
     }
   }
 
@@ -60,7 +60,7 @@ export default function LoginForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel className="text-white">Email</FormLabel>
               <FormControl>
                 <Input
                   placeholder="Enter your email..."
@@ -79,9 +79,9 @@ export default function LoginForm() {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Password</FormLabel>
+              <FormLabel className="text-white">Password</FormLabel>
               <FormControl>
-                <PasswordInput placeholder="Placeholder" {...field} />
+                <PasswordInput placeholder="Password" {...field} />
               </FormControl>
 
               <FormMessage />

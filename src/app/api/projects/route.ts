@@ -2,8 +2,6 @@
 
 import dbConnect from "@/src/lib/database";
 import { ProjectModel } from "@/src/schemas/project.schema";
-// import dbConnect from "@/lib/database";
-// import { ProjectModel } from "@/schemas/project.schema";
 import { NextResponse } from "next/server";
 
 export async function GET() {

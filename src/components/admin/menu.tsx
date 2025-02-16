@@ -5,16 +5,6 @@ import { Ellipsis, LogOut } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 
 import { cn } from '@/lib/utils'
-// import { getMenuList } from '@/lib/menu-list'
-// import { Button } from '@/components/ui/button'
-// import { ScrollArea } from '@/components/ui/scroll-area'
-// import { CollapseMenuButton } from '@/components/admin/collapseButton'
-// import {
-//   Tooltip,
-//   TooltipTrigger,
-//   TooltipContent,
-//   TooltipProvider,
-// } from '@/components/ui/tooltip'
 import { signOut } from 'next-auth/react'
 import { getMenuList } from '@/src/lib/menu-list'
 import { ScrollArea } from '../ui/scroll-area'
@@ -121,7 +111,7 @@ export function Menu({ isOpen }: MenuProps) {
               )}
             </li>
           ))}
-          <li className="w-full grow flex items-end">
+          <li className="w-full grow flex items-end text-white">
             <TooltipProvider disableHoverableContent>
               <Tooltip delayDuration={100}>
                 <TooltipTrigger asChild>
@@ -135,7 +125,7 @@ export function Menu({ isOpen }: MenuProps) {
                     </span>
                     <p
                       className={cn(
-                        'whitespace-nowrap',
+                        'whitespace-nowrap', 
                         isOpen === false ? 'opacity-0 hidden' : 'opacity-100',
                       )}
                     >
@@ -144,7 +134,7 @@ export function Menu({ isOpen }: MenuProps) {
                   </Button>
                 </TooltipTrigger>
                 {isOpen === false && (
-                  <TooltipContent side="right">Sign out</TooltipContent>
+                  <TooltipContent>Sign out</TooltipContent>
                 )}
               </Tooltip>
             </TooltipProvider>

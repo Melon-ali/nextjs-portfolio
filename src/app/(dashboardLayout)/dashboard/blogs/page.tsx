@@ -1,6 +1,3 @@
-// import BlogManagement from "@/components/blog-components/BlogManagement";
-// import { TBlog } from "@/types/types";
-
 import BlogManagement from '@/src/components/blogs/BlogManagement'
 import { TBlog } from '@/src/types/types'
 

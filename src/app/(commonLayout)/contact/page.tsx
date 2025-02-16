@@ -1,7 +1,5 @@
 import ContactComponent from "@/src/components/contact/ContactComponent";
 
-
-
 export const metadata = {
   title: 'Portfolio | Contact',
   description: 'Contact me',

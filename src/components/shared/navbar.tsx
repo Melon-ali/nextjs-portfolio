@@ -7,11 +7,12 @@ import { useEffect, useState } from 'react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/16/solid'
 import Link from 'next/link'
 import { signOut } from 'next-auth/react'
+import { Button } from '../ui/button'
 
 const navItems = [
   { name: 'Home', href: '/' },
   { name: 'Projects', href: '/projects' },
-  { name: 'blogs', href: '/blogs' },
+  { name: 'Blogs', href: '/blog' },
   { name: 'Contact', href: '/contact' },
   { name: 'Dashboard', href: '/dashboard' },
 ]
@@ -72,8 +73,8 @@ export default function Navbar({ session }: { session: UserProps | null }) {
           <div className="hidden md:flex items-center gap-6">
             <div className="flex items-center gap-6 bg-background/80 px-4 py-2 rounded-full border border-white/5 shadow-lg">
               {navItems.map((items, i) => (
-                <MenuItem key={items.name} index={i} href={items.href}>
-                  {items.name}
+                <MenuItem key={items.name} index={i}>
+                  <Link href={items.href}>{items.name}</Link>
                 </MenuItem>
               ))}
             </div>
@@ -99,17 +100,17 @@ export default function Navbar({ session }: { session: UserProps | null }) {
               </Link>
               
               {session?.user ? (
-                <button
+                <Button
                   onClick={() => signOut()}
-                  className="w-5 text-content/80 group-hover:text-primary transition-colors"
+                  className=" text-content/80 group-hover:text-primary transition-colors"
                 >
-                  Logout
-                </button>
+                  LogOut
+                </Button>
               ) : (
                 <Link href="/login">
-                  <button className="w-5 text-content/80 group-hover:text-primary transition-colors">
-                    login
-                  </button>
+                  <Button className="text-content/80 group-hover:text-primary transition-colors">
+                    Login
+                  </Button>
                 </Link>
               )}
             </div>
@@ -161,17 +162,17 @@ export default function Navbar({ session }: { session: UserProps | null }) {
                 <FacebookIcon className="h-5 w-5 text-content/80 group-hover:text-primary transition-colors" />
               </Link>
               {session?.user ? (
-                <button
+                <Button
                   onClick={() => signOut()}
-                  className="w-5 text-content/80 group-hover:text-primary transition-colors"
+                  className="text-content/80 group-hover:text-primary transition-colors"
                 >
-                  Logout
-                </button>
+                  LogOut
+                </Button>
               ) : (
                 <Link href="/login">
-                  <button className="w-5 text-content/80 group-hover:text-primary transition-colors">
-                    login
-                  </button>
+                  <Button className="text-content/80 group-hover:text-primary transition-colors">
+                    Login
+                  </Button>
                 </Link>
               )}
             </div>

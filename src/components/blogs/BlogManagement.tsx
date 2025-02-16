@@ -82,7 +82,7 @@ export default function BlogManagement() {
           <CustomModal
             content={<CreateBlogForm onSuccess={fetchBlogs} />}
             trigger={
-              <Button className="h-8" effect={'shine'}>
+              <Button className="h-8 text-white">
                 Add Blog
               </Button>
             }
@@ -123,6 +123,7 @@ export default function BlogManagement() {
                   <TableCell className="text-right">
                     <div className="flex justify-end gap-2">
                       <Button
+                      className='text-white'
                         variant="outline"
                         size="sm"
                         onClick={() => handleViewBlog(blog)}
@@ -132,7 +133,7 @@ export default function BlogManagement() {
                       <CustomModal
                         trigger={
                           <Button variant="outline" size="sm">
-                            <Edit className="h-4 w-4" />
+                            <Edit className="h-4 w-4 text-white" />
                           </Button>
                         }
                         content={

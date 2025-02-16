@@ -1,9 +1,4 @@
 'use client'
-// import { Menu } from '@/components/admin/menu'
-// import { SidebarToggle } from '@/components/admin/sidebar-toggle'
-// import { Button } from '@/components/ui/button'
-// import { useSidebar } from '@/hooks/use-sidebar'
-// import { useStore } from '@/hooks/use-store'
 import { cn } from '@/lib/utils'
 // import { useTheme } from 'next-themes'
 import Link from 'next/link'
@@ -28,7 +23,7 @@ export function Sidebar() {
   return (
     <aside
       className={cn(
-        'fixed top-0 left-0 z-20 h-screen -translate-x-full lg:translate-x-0 transition-[width] ease-in-out duration-300',
+        'fixed top-0 left-0 z-20 h-screen -translate-x-full lg:translate-x-0 transition-[width] ease-in-out duration-300 bg-gray-950 text-white',
         !getOpenState() ? 'w-[90px]' : 'w-72',
         settings.disabled && 'hidden',
       )}
@@ -37,7 +32,7 @@ export function Sidebar() {
       <div
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
-        className="relative h-full flex flex-col px-3 py-3 overflow-y-auto shadow-md dark:shadow-zinc-800"
+        className="relative h-full flex flex-col px-3 py-3 overflow-y-auto shadow-md"
       >
         <Button
           className={cn(
@@ -57,7 +52,7 @@ export function Sidebar() {
                   : 'translate-x-0 opacity-100',
               )}
             >
-              Ayan Kumar
+              Melon Ali
             </h1>
           </Link>
         </Button>

@@ -7,7 +7,7 @@ import { TExtendedBlog } from "@/src/app/(dashboardLayout)/dashboard/blogs/page"
 
 export default function BlogCard({ blog }: { blog: TExtendedBlog }) {
   return (
-    <Card className="group hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+    <Card className="group hover:shadow-lg transition-all duration-300 flex flex-col h-full text-white bg-surface">
       <CardHeader className="p-0">
         <div className="relative h-48 overflow-hidden">
           <Image

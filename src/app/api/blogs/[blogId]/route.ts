@@ -3,8 +3,6 @@
 
 import dbConnect from "@/src/lib/database";
 import { BlogModel } from "@/src/schemas/blog.schema";
-// import dbConnect from "@/lib/database";
-// import { BlogModel } from "@/schemas/blog.schema";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest, context: any) {
@@ -69,7 +67,7 @@ export async function PATCH(req: NextRequest, context: any) {
   }
 }
 
-// DELETE a blog by ID
+
 export async function DELETE(req: NextRequest, context: any) {
   try {
     await dbConnect();

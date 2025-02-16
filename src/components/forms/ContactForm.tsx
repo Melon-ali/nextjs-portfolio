@@ -9,18 +9,6 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
-// import { Button } from "@/components/ui/button";
-// import {
-//   Form,
-//   FormControl,
-//   FormField,
-//   FormItem,
-//   FormLabel,
-//   FormMessage,
-// } from "@/components/ui/form";
-// import { Input } from "@/components/ui/input";
-// import { Textarea } from "@/components/ui/textarea";
-// import { baseUrl } from "@/utils/authOptions";
 
 const formSchema = z.object({
     name: z.string().min(1, "Name is required"),
@@ -129,7 +117,7 @@ export default function ContactForm() {
             </FormItem>
           )}
         />
-        <Button effect={"shine"} type="submit" className="h-8 w-full">
+        <Button type="submit" className="h-8 w-full">
           Submit
         </Button>
       </form>

@@ -11,7 +11,7 @@ export default function BlogDetailsCard({ blog }: { blog: TExtendedBlog }) {
   const router = useRouter();
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="max-w-4xl mx-auto space-y-8 text-white  pt-10">
       <div className="flex items-center">
         <Button 
           onClick={() => router.back()}

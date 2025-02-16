@@ -85,8 +85,12 @@ const aboutData: AboutSection[] = [
         stage: 'Learn with Sumit - LWS, Batch-1',
       },
       {
-        title: 'Complete We Development - Web Developer',
+        title: 'Complete We Development',
         stage: 'Programing Hero - Level-1, Batch-4',
+      },
+      {
+        title: 'Full Stack Developer ( MERN )',
+        stage: 'Programing Hero - Level-2, Batch-4',
       },
     ],
   },
@@ -134,7 +138,7 @@ const About: React.FC = () => {
             exit="hidden"
             className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
           >
-            10 years ago, I began freelancing as a Developer. Since then, I have
+            02 years ago, I began freelancing as a Developer. Since then, I have
             done remote work for agencies, consulted for startups, and
             collaborated on digital products for business and consumer use.
           </motion.p>

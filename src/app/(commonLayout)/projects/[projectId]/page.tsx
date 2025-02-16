@@ -1,6 +1,3 @@
-// import { baseUrl } from "@/utils/authOptions";
-// import ProjectDetailsCard from "@/components/projects-components/ProjectDetailsCard";
-
 import ProjectDetailsCard from '@/src/components/projects/ProjectDetailsCard'
 import { baseUrl } from '@/src/utils/authOptions'
 

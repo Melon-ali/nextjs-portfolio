@@ -3,6 +3,8 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { ParticleCanvas } from '../../hooks/particle'
+import { MdOutlineFileDownload } from 'react-icons/md'
+import Link from 'next/link'
 
 const Hero = () => {
   const { scrollY } = useScroll()
@@ -45,31 +47,60 @@ const Hero = () => {
               developer. I develop web applications. My core skill is based on
               JavaScript and I love to do most of the things using JavaScript.
             </motion.p>
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
-              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-              className="relative overflow-hidden px-8 py-4 rounded-full bg-surface border border-white/10 hover:border-primary/30 transition-all group"
-            >
-              <span className="text-content group-hover:text-primary transition-colors">
-                Expore Work
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-tertiary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-            </motion.button>
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
-              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-              className="relative overflow-hidden px-8 py-4 rounded-full bg-surface border border-white/10 hover:border-primary/30 transition-all group ml-5"
-            >
-              <span className="text-content group-hover:text-primary transition-colors">
-                Download Resume
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-tertiary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-            </motion.button>
+            <div className="flex gap-4">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="flex relative z-[5]"
+              >
+                <button
+                  className="relative px-8 py-3 rounded-full bg-surface
+                border border-white/10 hover:border-primary/10 transition-all group button-hover"
+                >
+                  <Link
+                    href={'/projects'}
+                    className="text-content transition-colors
+                    relative z-[1]"
+                  >
+                    Explore Work
+                  </Link>
+                  <div
+                    className="absolute inset-0 rounded-full
+                    bg-gradient-to-r from-primary/10 to-tertiary/10
+                    opacity-0 group-hover:opacity-100 transition-opacity"
+                  />
+                </button>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="flex relative z-[5]"
+              >
+                <a
+                  target="_black"
+                  href="https://drive.google.com/file/d/1TMDE8cwbHiS0R0-o6Pu8gW62IWPrAiaJ/view?usp=sharing"
+                  download="/public/Rubel-Ali.pdf"
+                  className="button-hover"
+                >
+                  <button
+                    className="relative px-8 py-3 rounded-full bg-surface
+                border border-white/10 hover:border-primary/10 transition-all group text-white flex gap-2"
+                  >
+                    <MdOutlineFileDownload size={18} />
+                    Download Resume
+                    <div
+                      className="absolute inset-0 rounded-full
+                    bg-gradient-to-r from-primary/10 to-tertiary/10
+                    opacity-0 group-hover:opacity-100 transition-opacity"
+                    />
+                  </button>
+                </a>
+              </motion.div>
+            </div>
           </motion.div>
+
           {/* Image Card */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}

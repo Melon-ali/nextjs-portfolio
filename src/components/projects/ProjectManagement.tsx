@@ -86,7 +86,7 @@ export default function ProjectManagement() {
           <CustomModal
             content={<CreateProjectForm onSuccess={fetchProjects} />}
             trigger={
-              <Button className="h-8" effect={'shine'}>
+              <Button className="h-8 text-white">
                 Add Project
               </Button>
             }
@@ -141,12 +141,12 @@ export default function ProjectManagement() {
                         size="sm"
                         onClick={() => handleViewProject(project)}
                       >
-                        <Eye className="h-4 w-4" />
+                        <Eye className="h-4 w-4 text-white" />
                       </Button>
                       <CustomModal
                         trigger={
                           <Button variant="outline" size="sm">
-                            <Edit className="h-4 w-4" />
+                            <Edit className="h-4 w-4 text-white" />
                           </Button>
                         }
                         content={
