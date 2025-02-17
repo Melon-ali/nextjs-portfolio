@@ -17,7 +17,7 @@ import { useRouter } from "next/navigation";
 export default function ProjectDetailsCard({ project }: { project: TProject }) {
     const router = useRouter();
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
+    <div className="max-w-4xl mx-auto space-y-8 text-white pt-10">
         <div className="flex items-center">
         <Button 
           
@@ -96,7 +96,7 @@ export default function ProjectDetailsCard({ project }: { project: TProject }) {
             rel="noopener noreferrer"
             className="flex-1"
           >
-            <Button className="w-full" variant="outline">
+            <Button className="w-full">
               <Github className="mr-2 h-4 w-4" />
               Client Repository
             </Button>
@@ -108,7 +108,7 @@ export default function ProjectDetailsCard({ project }: { project: TProject }) {
               rel="noopener noreferrer"
               className="flex-1"
             >
-              <Button className="w-full" variant="outline">
+              <Button className="w-full">
                 <Github className="mr-2 h-4 w-4" />
                 Server Repository
               </Button>

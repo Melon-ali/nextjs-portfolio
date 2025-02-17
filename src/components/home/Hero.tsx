@@ -79,9 +79,10 @@ const Hero = () => {
                 className="flex relative z-[5]"
               >
                 <a
-                  target="_black"
-                  href="https://drive.google.com/file/d/1TMDE8cwbHiS0R0-o6Pu8gW62IWPrAiaJ/view?usp=sharing"
-                  download="/public/Rubel-Ali.pdf"
+                  target="_blank"
+                  href="/Rubel-Ali.pdf"
+                  rel="noreferrer"
+                  download
                   className="button-hover"
                 >
                   <button
