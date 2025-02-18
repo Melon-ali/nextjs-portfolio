@@ -5,8 +5,7 @@ import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { loginUser } from "./actions/loginUser";
 
-export const baseUrl = "http://localhost:3000";
-// export const baseUrl = "https://b4-a5-portfolio.vercel.app";
+export const baseUrl = "https://nextjs-portfolio-beta-murex.vercel.app";
 
 export const authOptions: NextAuthOptions = {
   providers: [

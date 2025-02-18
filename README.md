@@ -4,7 +4,7 @@ Full-stack portfolio and blogging platform built with Next.js 15, featuring OAut
 
 ## 🌐 Live Demo & Source Code
 
-- **Live Demo:** [View Live Site](https://b4-a5-portfolio.vercel.app)
+- **Live Demo:** [View Live Site](https://nextjs-portfolio-beta-murex.vercel.app)
 - **Source Code:** [GitHub Repository](https://github.com/Melon-ali/nextjs-portfolio)
 
 ## ✨ Core Features

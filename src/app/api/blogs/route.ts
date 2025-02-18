@@ -2,8 +2,6 @@
 
 import dbConnect from "@/src/lib/database";
 import { BlogModel } from "@/src/schemas/blog.schema";
-// import dbConnect from "@/lib/database";
-// import { BlogModel } from "@/schemas/blog.schema";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET() {
