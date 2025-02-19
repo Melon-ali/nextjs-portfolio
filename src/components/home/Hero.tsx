@@ -10,7 +10,7 @@ const Hero = () => {
   const { scrollY } = useScroll()
   const y = useTransform(scrollY, [0, 500], [0, 100])
   return (
-    <section className="min-h-screen relative overflow-hidden bg-black">
+    <div className="min-h-screen relative overflow-hidden bg-black">
       <ParticleCanvas />
       <div className="max-w-7xl mx-auto px-6 pt-32">
         <div className="flex flex-col lg:flex-row items-center gap-16">
@@ -168,7 +168,7 @@ const Hero = () => {
           </motion.div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 

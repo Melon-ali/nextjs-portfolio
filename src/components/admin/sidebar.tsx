@@ -1,5 +1,5 @@
 'use client'
-import { cn } from '@/lib/utils'
+import { cn } from '@/src/lib/utils'
 // import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -43,7 +43,6 @@ export function Sidebar() {
           asChild
         >
           <Link href="/" className="flex items-center justify-center gap-4">
-            
             <h1
               className={cn(
                 'font-bold text-lg whitespace-nowrap transition-[transform,opacity,display] ease-in-out duration-300',

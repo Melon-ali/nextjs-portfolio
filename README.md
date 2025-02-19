@@ -4,31 +4,29 @@ Full-stack portfolio and blogging platform built with Next.js 15, featuring OAut
 
 ## 🌐 Live Demo & Source Code
 
-- **Live Demo:** [View Live Site](https://nextjs-portfolio-beta-murex.vercel.app)
+- **Live Demo:** [View Live Site](http://localhost:3000)
 - **Source Code:** [GitHub Repository](https://github.com/Melon-ali/nextjs-portfolio)
 
 ## ✨ Core Features
 
 ### 🏠 Public Pages
+
 - **Home Page (/)**
   - Dynamic portfolio introduction
   - Skills showcase with icons
   - Featured projects section
   - Downloadable resume
   - Animated section transitions
-  
 - **Projects Page (/projects)**
   - Grid/list view of projects
   - Detailed project pages (/projects/[id])
   - Technology stack display
   - Live demo & GitHub links
-  
 - **Blog Page (/blog)**
   - Article listing with pagination
   - Individual blog posts (/blog/[id])
   - Markdown content support
   - Category filtering
-  
 - **Contact Page (/contact)**
   - Interactive contact form
   - Real-time form validation
@@ -36,7 +34,9 @@ Full-stack portfolio and blogging platform built with Next.js 15, featuring OAut
   - Success notifications
 
 ### 🔐 Dashboard Features
+
 - **Authentication**
+
   - Social login (Google & GitHub) via NextAuth
   - Protected routes
   - Session management
@@ -51,13 +51,14 @@ Full-stack portfolio and blogging platform built with Next.js 15, featuring OAut
 ## 🛠️ Technology Stack
 
 ### Frontend
+
 - **Framework**: Next.js 15.1.6
 - **Language**: TypeScript
-- **UI Components**: 
+- **UI Components**:
   - Radix UI primitives
   - Shadcn UI components
   - Custom Tailwind components
-- **Styling**: 
+- **Styling**:
   - Tailwind CSS
   - CSS Animations
   - Framer Motion
@@ -65,16 +66,18 @@ Full-stack portfolio and blogging platform built with Next.js 15, featuring OAut
 - **Forms**: React Hook Form with Zod validation
 
 ### Backend
+
 - **API Routes**: Next.js API endpoints
 - **Database**: MongoDB with Mongoose
 - **Authentication**: NextAuth.js
 - **Image Processing**: Sharp
-- **Security**: 
+- **Security**:
   - API route protection
   - Input validation
   - MongoDB sanitization
 
 ### Additional Libraries
+
 - **Content**: React Markdown
 - **UI Enhancement**:
   - Embla Carousel
@@ -86,6 +89,7 @@ Full-stack portfolio and blogging platform built with Next.js 15, featuring OAut
 - **Development**: ESLint, TypeScript
 
 ## 📁 Project Structure
+
 ```
 app/
 ├── (commonLayout)/           # Public pages layout group
@@ -127,6 +131,7 @@ app/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js 18.x or higher
 - MongoDB database
 - GitHub and Google OAuth credentials
@@ -134,17 +139,20 @@ app/
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/Melon-ali/nextjs-portfolio
 cd nextjs-portfolio
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Configure environment variables:
+
 ```env
 # App URLs
 NEXTAUTH_URL=http://localhost:3000
@@ -162,6 +170,7 @@ MONGODB_URI=your-mongodb-connection-string
 ```
 
 4. Run the development server:
+
 ```bash
 npm run dev
 ```
@@ -169,6 +178,7 @@ npm run dev
 ## 💾 Data Models
 
 ### Blog Post
+
 ```typescript
 interface BlogPost {
   title: string;
@@ -179,6 +189,7 @@ interface BlogPost {
 ```
 
 ### Project
+
 ```typescript
 interface Project {
   title: string;
@@ -192,6 +203,7 @@ interface Project {
 ```
 
 ### Message
+
 ```typescript
 interface Message {
   name: string;
@@ -203,9 +215,11 @@ interface Message {
 ## 🔒 API Routes
 
 ### Authentication
+
 - `GET/POST /api/auth/[...nextauth]` - NextAuth authentication routes
 
 ### Blog Endpoints
+
 - `GET /api/blogs` - Get all blogs
 - `GET /api/blogs/[id]` - Get single blog
 - `POST /api/blogs` - Create blog (protected)
@@ -213,6 +227,7 @@ interface Message {
 - `DELETE /api/blogs/[id]` - Delete blog (protected)
 
 ### Project Endpoints
+
 - `GET /api/projects` - Get all projects
 - `GET /api/projects/[id]` - Get single project
 - `POST /api/projects` - Create project (protected)
@@ -220,11 +235,13 @@ interface Message {
 - `DELETE /api/projects/[id]` - Delete project (protected)
 
 ### Message Endpoints
+
 - `POST /api/messages` - Create message
 - `GET /api/messages` - Get all messages (protected)
 - `DELETE /api/messages/[id]` - Delete message (protected)
 
 ## 🎨 Features Implemented
+
 - [x] Server-side rendering (SSR) for SEO
 - [x] Static Site Generation for stable content
 - [x] Markdown blog content
@@ -241,6 +258,7 @@ interface Message {
 - [x] Blog management system
 
 ## 📦 Package Scripts
+
 ```json
 {
   "scripts": {
@@ -262,6 +280,7 @@ The application is configured for deployment on Vercel:
 4. Deploy
 
 ## 🔍 Future Enhancements
+
 - [ ] Newsletter integration
 - [ ] Comment system for blog posts
 - [ ] Advanced image gallery for projects
@@ -286,6 +305,7 @@ The application is configured for deployment on Vercel:
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 For more information about the technologies used, please refer to their respective documentation:
+
 - [Next.js](https://nextjs.org/)
 - [MongoDB](https://www.mongodb.com/)
 - [NextAuth.js](https://next-auth.js.org/)

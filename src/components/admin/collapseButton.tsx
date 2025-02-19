@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { ChevronDown, Dot, LucideIcon } from 'lucide-react'
 
-import { cn } from '@/lib/utils'
+import { cn } from '@/src/lib/utils'
 import { DropdownMenuArrow } from '@radix-ui/react-dropdown-menu'
 import { usePathname } from 'next/navigation'
 import {

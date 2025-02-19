@@ -223,10 +223,11 @@ const About: React.FC = () => {
               className="relative px-8 py-3 rounded-full bg-surface
                 border border-white/10 hover:border-primary/10 transition-all group"
             >
-              <Link target="_blank"
-                  href="/Rubel-Ali.pdf"
-                  rel="noreferrer"
-                  download
+              <Link
+                target="_blank"
+                href="/Rubel-Ali.pdf"
+                rel="noreferrer"
+                download
                 className="text-content transition-colors
                     relative z-[1]"
               >

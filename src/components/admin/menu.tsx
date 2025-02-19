@@ -4,11 +4,16 @@ import Link from 'next/link'
 import { Ellipsis, LogOut } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 
-import { cn } from '@/lib/utils'
+import { cn } from '@/src/lib/utils'
 import { signOut } from 'next-auth/react'
 import { getMenuList } from '@/src/lib/menu-list'
 import { ScrollArea } from '../ui/scroll-area'
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '../ui/tooltip'
 import { Button } from '../ui/button'
 import { CollapseMenuButton } from './collapseButton'
 
@@ -125,7 +130,7 @@ export function Menu({ isOpen }: MenuProps) {
                     </span>
                     <p
                       className={cn(
-                        'whitespace-nowrap', 
+                        'whitespace-nowrap',
                         isOpen === false ? 'opacity-0 hidden' : 'opacity-100',
                       )}
                     >
@@ -133,9 +138,7 @@ export function Menu({ isOpen }: MenuProps) {
                     </p>
                   </Button>
                 </TooltipTrigger>
-                {isOpen === false && (
-                  <TooltipContent>Sign out</TooltipContent>
-                )}
+                {isOpen === false && <TooltipContent>Sign out</TooltipContent>}
               </Tooltip>
             </TooltipProvider>
           </li>

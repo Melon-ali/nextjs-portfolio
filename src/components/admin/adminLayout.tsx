@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from '@/lib/utils'
+import { cn } from '@/src/lib/utils'
 import { useSidebar } from '@/src/hooks/use-sidebar'
 import { useStore } from '@/src/hooks/use-store'
 import { Sidebar } from './sidebar'
