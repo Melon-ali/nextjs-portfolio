@@ -225,7 +225,7 @@ const About: React.FC = () => {
             >
               <Link
                 target="_blank"
-                href="/Rubel-Ali.pdf"
+                href="/Melon-Resume.pdf"
                 rel="noreferrer"
                 download
                 className="text-content transition-colors
